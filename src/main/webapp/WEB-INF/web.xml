@@ -44,6 +44,6 @@
 	<!-- 设置dispatchservlet的匹配模式，通过把dispatchservlet映射到/，默认servlet会处理所有的请求，包括静态资源 -->  
 	<servlet-mapping>  
 	  <servlet-name>dispatcher</servlet-name>  
-	  <url-pattern>/</url-pattern>
+	  <url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 </web-app>
