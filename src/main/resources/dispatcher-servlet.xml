@@ -12,6 +12,7 @@
        		http://www.springframework.org/schema/context/spring-context.xsd"
 	default-lazy-init="true">
 	
+	<context:annotation-config /> <!-- 激活Bean中定义的注解 -->
 	<!-- 添加注解驱动 -->
 	<mvc:annotation-driven>
 		<mvc:message-converters>     
@@ -36,10 +37,19 @@
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
 		<!-- 配置jsp路径前缀 -->
-		<property name="prefix" value="/resources/"></property>
+		<property name="prefix" value="/"></property>
 		<!-- 配置URl后缀 -->
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/resources/" />
+		<property name="suffix" value=".jsp" />
+	</bean> -->
+	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀,这里以jsp为后最 --> 
+	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+			p:prefix="/resources/" p:suffix=".jsp"
+			p:viewClass="org.springframework.web.servlet.view.JstlView">
+	</bean> -->
 
    <bean id="multipartResolver"  
         class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
